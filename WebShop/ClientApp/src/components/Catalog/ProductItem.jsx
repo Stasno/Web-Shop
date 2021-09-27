@@ -43,35 +43,34 @@ const ProductItem = function ProductList({item})
         <Col sm="12" md="6" lg="4" xs="12" className="ProductItem">
             <li className="ProductContent">
 
-                    <Link to={"/product/" + item.id}>
-                        <img 
-                            src={item.imghref}
-                            height="250"
-                            width="250"  
-                            className="itemImg"
-                            alt={item.title}/>
-                    </Link>
+                    
+                <img
+                        
+                    src={item.imghref}
+                    height="250"
+                    width="250"  
+                    className="itemImg"
+                alt={item.title} />
 
-                    <Link 
-                        to={"/product/" + item.id}
-                        className="itemTitle">
-                        {item.title}
-                    </Link>
 
-                    <div className="itemPrice">
-                        {item.price}
-                        <span className="dollar"> $ </span>
-                    </div>
+                <div className="itemTitle">
+                    {item.title}
+                </div>
 
-                    <form>
-                        <Button 
-                            disabled={item.inStock ? false : true}
-                            variant={item.inStock ? "outline-success" : "outline-danger"}
-                            className="btn"
-                            onClick={() => AddToCart(item.id)}>
-                            {item.inStock ? "Add to cart" : "Sold out"}
-                        </Button>
-                    </form>
+                <div className="itemPrice">
+                    {item.price}
+                    <span className="dollar"> $ </span>
+                </div>
+
+                <form>
+                    <Button 
+                        disabled={item.inStock ? false : true}
+                        variant={item.inStock ? "outline-success" : "outline-danger"}
+                        className="btn"
+                        onClick={() => AddToCart(item.id)}>
+                        {item.inStock ? "Add to cart" : "Sold out"}
+                    </Button>
+                </form>
 
             </li>
         </Col>
