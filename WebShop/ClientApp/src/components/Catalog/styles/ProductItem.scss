@@ -1,0 +1,69 @@
+
+
+
+.ProductItem
+{
+
+    justify-content: center;
+    display: flex;
+    padding-bottom: 30px;
+
+
+    .ProductContent
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        width: 250px;
+        height: 387px;
+        max-width: 100%;
+        position: relative;
+        text-decoration: none;
+        color: #000 !important;
+    }
+
+    li
+    {
+        display: flex;
+        flex-wrap: wrap;
+        text-align:unset;
+    }
+
+
+    .itemImg
+    {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .itemTitle
+    {
+        font-size: 20px;
+        padding-top: 20px;
+        text-decoration: none;
+        max-width: 100%;
+        color: rgb(66, 66, 66);
+    }
+
+    .itemPrice
+    {
+        padding-top: 5px;
+        font-family: IBM Plex Sans,sans-serif;
+        font-size: 30px;
+
+        .dollar
+        {
+            font-weight: 400;
+        }
+
+    }
+
+    .btn
+    {
+        padding-top: 5px;
+    }
+
+}

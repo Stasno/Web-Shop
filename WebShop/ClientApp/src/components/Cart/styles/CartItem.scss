@@ -1,0 +1,108 @@
+
+.OutOfStock
+{
+
+    .titleOut
+    {
+        color: red;
+        text-align: center;
+        font-size: 23px;
+    }
+}
+
+
+
+.CartItem
+{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top: 1px solid lightgray;
+    padding-right: 0;
+    padding-left: 0;
+    border-bottom-width: 2px;
+
+    .row
+    {
+        justify-content: center;
+    }
+
+    .img
+    {
+        min-width: 100px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .title
+    {
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .quantity
+    {
+        justify-content: center;
+        min-width: 133px;
+        padding-left: 0%;
+        display: flex;
+        vertical-align: middle;
+
+        .div
+        {
+            align-self: center;
+        }
+
+        .number
+        {
+            align-self: center;
+            top:2px;
+            padding-right: 10px;
+            padding-left: 10px;
+            color: #212529;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight:600;
+        }
+
+        .incbtn
+        {
+            align-self: center;
+            font-size: 15px;
+            padding: 8px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-radius: 50%;
+        }
+        .decbtn
+        {
+            align-self: center;
+            font-size: 15px;
+            padding: 9.5px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border-radius: 50%;
+        }
+    }
+
+    .price
+    {
+        justify-content: center;
+        font-weight:bold;
+        display: flex;
+        align-self: center;
+        font-size: 20px;
+        .dollar
+        {
+            padding-left: 3px;
+        }
+    }
+
+    .removeItem
+    {
+        align-self: center;
+    }
+
+}

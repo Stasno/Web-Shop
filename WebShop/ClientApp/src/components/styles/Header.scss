@@ -1,0 +1,26 @@
+
+
+.item-padding-left
+{
+    padding-left: 20px;
+}
+
+.item-padding-right
+{
+    padding-right: 20px;
+}
+
+.invert {
+    filter: invert(75%);
+}
+
+
+.mainLink
+{
+    color: white !important;
+    &:hover
+    {
+        color: white !important;
+    }
+}
+

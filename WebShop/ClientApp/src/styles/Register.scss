@@ -1,0 +1,69 @@
+
+
+.form-signup {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+    text-align: center;
+
+    h1 {
+        font-size: 2em;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    input[name="email"] {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    input[name="Firstname"] {
+        margin-bottom: -5px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    input[name="Secondname"] {
+        margin-bottom: -5px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    input[name="password"] {
+        margin-bottom: -5px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    input[name="PasswordConfirm"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .btn {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+}
+
+.errors
+{
+    padding-top: 25px;
+    text-align: start;
+
+    .error
+    {
+        color: red;
+    }
+
+}

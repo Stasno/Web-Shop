@@ -1,0 +1,75 @@
+
+
+.cart
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+    .heading
+    {
+        font-size: 25px;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 3px;
+        margin: 0 auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+
+    .cartInteract
+    {
+        display: flex;
+        padding: 0px;
+
+        .emptyCart
+        {
+            border-radius: 30px;
+            color: gray;
+        }
+
+        .totalPrice
+        {
+            display: flex;
+            float: right; 
+            border-radius: 30px;
+            font-size: 23px;
+
+            .price
+            {
+                padding-left: 5px;
+                color: #198754;
+                font-weight: bold;
+            }
+
+            .dollar
+            {
+                color: #198754;
+                padding-left: 5px;
+            }
+
+        }
+
+    }
+
+    .createOrder
+    {
+        display: block;
+        padding-top: 25px;
+        .btn
+        {
+            display: flex;
+            float: right; 
+        }
+    }
+
+    .emptyCart
+    {
+        padding-top: 100px;
+        text-align: center;
+        font-size: x-large;
+        color: red;
+
+    }
+
+}

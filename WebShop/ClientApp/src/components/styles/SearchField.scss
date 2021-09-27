@@ -1,0 +1,35 @@
+
+.search-form {
+
+    input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+
+        &::-webkit-calendar-picker-indicator {
+            display: none;
+        }
+    }
+    
+    .button {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-left-color: darkgreen;
+    }
+
+    select #selectoption {
+        border-left:none;
+        padding:none;
+    }
+
+    input #datahere {
+        position:relative;
+        border-right:none;
+        padding:none;
+    }
+    
+}
+

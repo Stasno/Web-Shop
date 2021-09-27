@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebShop</name>
+    </assembly>
+    <members>
+        <member name="M:WebShop.Controllers.AccountController.Register(WebShop.ViewModels.Account.RegisterRequest)">
+            <summary>
+            Registers a new user
+            </summary>
+            <param name="requst"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.AccountController.Login(WebShop.ViewModels.Account.LoginRequest)">
+            <summary>
+            Authorizes the user
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.AccountController.IsSignIn">
+            <summary>
+            Checks if the user is sign in
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.AccountController.Logout">
+            <summary>
+            Removes user's coockies 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.CartController.GetCart">
+            <summary>
+            Returns all items in the cart of the current user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.CartController.EmptyTheCart">
+            <summary>
+            Clears the user's cart
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.CartController.AddItem(System.Int32)">
+            <summary>
+            Adds a product to the cart or, if it exists, increases the quantity
+            </summary>
+            <param name="Productid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.CartController.UpdateItem(System.Int32,System.Int32)">
+            <summary>
+            Sets the new quantity of items in the cart 
+            </summary>
+            <param name="Itemid"></param>
+            <param name="newQuantity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.CartController.RemoveItem(System.Int32)">
+            <summary>
+            Removes an item from the cart
+            </summary>
+            <param name="Itemid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.CatalogController.GetProducts(WebShop.ViewModels.Catalog.ProductPageRequest)">
+            <summary>
+            Returns product page
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.CatalogController.GetProduct(System.Int32)">
+            <summary>
+            Returns product by specific id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.CatalogController.Search(System.String,System.Int32)">
+            <summary>
+            Returns product names and codes that match the name
+            </summary>
+            <param name="name"></param>
+            <param name="limit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.CatalogController.AddProduct(WebShop.ViewModels.Catalog.AddProductRequest)">
+            <summary>
+            Adds a new product to the database
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.CatalogController.UpdateProduct(WebShop.ViewModels.Catalog.UpdateProductRequest)">
+            <summary>
+            Updates the product in the database
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.OrderController.GetOrders(System.Int32,System.Int32)">
+            <summary>
+            Returns all orders by current authrorized user 
+            </summary>
+            <param name="limit"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.OrderController.GetOrder(System.Int32)">
+            <summary>
+            Returns order by specific id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.OrderController.CreateOrder(WebShop.ViewModels.Order.AddOrderRequest)">
+            <summary>
+            Creates an order and receives an item from the cart
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.OrderController.CancelOrder(System.Int32,System.String)">
+            <summary>
+            Sets an specific order to "Cancelled" state
+            </summary>
+            <param name="id"></param>
+            <param name="description"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebShop.Controllers.OrderController.UpdateOrderState(System.Int32,System.String,System.String)">
+            <summary>
+            Changes order status
+            </summary>
+            <param name="id"></param>
+            <param name="newState"></param>
+            <param name="description"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

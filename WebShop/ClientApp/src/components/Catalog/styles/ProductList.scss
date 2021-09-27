@@ -1,0 +1,14 @@
+
+.ProductList
+{
+    display: flex;
+
+
+    ul
+    {
+        display: flex;
+        flex-wrap: wrap;
+        list-style-type: none;
+        width: 100%;
+    }
+}

@@ -1,0 +1,56 @@
+
+.CreateOrder
+{
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+    text-align: center;
+
+    h1 {
+        font-size: 2em;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    input[name="phoneNumber"] {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    input[name="zipCode"] {
+        margin-bottom: -5px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    input[name="address"] {
+        margin-bottom: -5px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    input[name="city"] {
+        margin-bottom: -5px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    input[name="country"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .btn {
+        margin-top: 1rem;
+        width: 100%;
+    }
+}

@@ -1,0 +1,48 @@
+
+.Categories 
+{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-decoration: solid;
+    display: flex;
+    
+    ul {
+        padding-left: 0px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn
+    {
+        color: #000;
+        background-color: #ffffff;
+        border-color: #333741;
+        padding: 10px 20px;
+        border-radius: 30px;
+        margin-right: 40px;
+        font-weight: bold;
+
+        &:hover 
+        {
+            color: #ffffff;
+            background-color: #212529;
+            border-color: #333741;
+        }
+
+        &:active
+        {
+            color: #ffffff;
+            background-color: #212529;
+            border-color: #333741;
+        }
+
+        &:focus
+        {
+            color: #ffffff;
+            background-color: #212529;
+            border-color: #333741;
+        }
+   
+    }
+
+}
