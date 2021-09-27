@@ -5,14 +5,16 @@ I used this project to learn how to build a web server with client for it, and l
 
 # Client
 
-Implements the logic and user interface 
+Implemented the logic and user interface
 * shopping cart management
 * order creation / cancellation
 * catalog navigation
 * user registration / login
 * adding a product to the cart
 
-Frameworks - Packages used
+<br />
+
+#### Frameworks - Packages used
 
 * [React](https://ru.reactjs.org/)
 * [React-bootstrap](https://react-bootstrap.github.io/)
@@ -23,7 +25,7 @@ Contains api for catalog, cart, order, user.
 
 [How to see the api of the project.](#SWAGGER-UI)
 
-Frameworks - Packages used.
+#### Frameworks - Packages used.
 
 * [Asp.net core 5.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro).
 * [Entity framework 5.0](https://docs.microsoft.com/ru-ru/ef/).
