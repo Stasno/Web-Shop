@@ -58,7 +58,7 @@ Contains api for catalog, cart, order, user.
 
 Shows api of the project
 
-#### Hot To open SWAGGER UI.
+#### Hot to open SWAGGER UI.
 
 1. Build and run the project 
 2. Open page ```https://localhost:44395/swagger ```
