@@ -41,7 +41,7 @@ namespace WebShop.Services
                     Id = p.Id,
                     Price = p.Price,
                     Title = p.Title,
-                    InStock = p.InStock > 1
+                    InStock = p.InStock > 0
                 })
                 .AsNoTracking()
                 .ToListAsync();

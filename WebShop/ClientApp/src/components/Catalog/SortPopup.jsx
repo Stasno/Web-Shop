@@ -1,5 +1,5 @@
 import { Dropdown } from 'react-bootstrap'
-import React, { useState} from 'react'
+import React from 'react'
 
 import './styles/Sort.scss'
 
@@ -7,8 +7,6 @@ const items = ['Price', 'Name']
 const SortTypes = ["asc", "desc"]
 
 const SortPopup = React.memo(function SortPopup({SelectedSort, onClickSortType, UpdateSort}) {
-
-    const [SelectedItem, setSelectedItem] = useState(SelectedSort)
 
     return (
     <div className="sort">

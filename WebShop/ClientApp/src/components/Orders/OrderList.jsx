@@ -4,7 +4,7 @@ import OrderItem from './OrderItem';
 
 import './styles/OrderList.scss'
 
-function OrderList({items})
+function OrderList({items, onCancel})
 {
     return (
         <Accordion defaultActiveKey="0" className="Accordion">
@@ -13,7 +13,11 @@ function OrderList({items})
                 <Col lg="10">
                     {items.map((order, index) => 
                     {
-                        return <OrderItem order={order} index={index}/>
+                        return <OrderItem 
+                        order={order} 
+                        index={index} 
+                        key={order.id}
+                        onCancel={() => onCancel(index, order.id)}/>
                     })}
                 </Col>
                 <Col lg="1"/>

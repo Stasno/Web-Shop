@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row} from 'react-bootstrap';
-import { ApiFetchGet } from '../Services/ApiService';
+import { ApiFetchGet, API_URL } from '../Services/ApiService';
 import {OrderList} from '../components/Orders';
 import AuthService from '../Services/AuthService';
 import { LoadingBlock } from '../components/Catalog';
@@ -12,6 +12,50 @@ import '../styles/Orders.scss';
 
 class Orders extends React.Component
 {
+
+    onCancel = (index, id) =>
+    {
+        console.log("onCancel ", index, id);
+        const requestOptions = {
+            method: "Delete",
+            headers: { 'Content-Type': 'application/json' }
+        };
+
+        fetch(API_URL + "order/" + id, requestOptions)
+        .then(res => 
+            {
+                if (res.ok)
+                {
+                    return res;
+                }
+                else
+                {
+                    if (res.status === 401)
+                    {
+                        AuthService.logout();
+                    }
+                    Promise.reject(res);
+                }
+            })
+        .then(res => 
+            {
+                console.log(this.state.RequestResult.orders[index]);
+                this.state.RequestResult.orders[index].orderStatus = "Cancelled";
+                this.setState({
+                    RequestResult: this.state.RequestResult,
+                });
+            },
+            err =>
+            {
+                return Promise.resolve();
+            }
+        )
+        .catch(err => 
+            {
+                console.log("error order", err);
+            });
+
+    };
 
     FetchOrderItems()
     {
@@ -68,6 +112,7 @@ class Orders extends React.Component
         }
 
         this.onChangePage = this.onChangePage.bind(this);
+        this.onCancel = this.onCancel.bind(this);
 
     }
 
@@ -95,7 +140,7 @@ class Orders extends React.Component
 
                 <Row>
 
-                    {isLoaded ? <OrderList items={RequestResult.orders}/>
+                    {isLoaded ? <OrderList items={RequestResult.orders} onCancel={this.onCancel.bind(this)}/>
                     : <LoadingBlock/> }
 
                     {isLoaded && !error &&  RequestResult.pageSize !== 0 ? 

@@ -1,14 +1,18 @@
 import React from 'react';
-import { Accordion, Col, Row } from 'react-bootstrap';
+import { Accordion, Col, Row, Button } from 'react-bootstrap';
+import { API_URL } from '../../Services/ApiService';
+import AuthService from '../../Services/AuthService';
 
 import './styles/OrderItem.scss'
 
-function OrderItem({order, index})
+function OrderItem({order, index, onCancel})
 {
+
+    
+
     return (
         <Accordion.Item eventKey={index}>
             <Accordion.Header className="accordionHeader">
-
                 <Col xs="3" lg="2" className="text">
                     <div className="divWrap">
                         Order №&ensp; 
@@ -110,7 +114,8 @@ function OrderItem({order, index})
                     {
                         return (
                             <Row className={"productItem " + 
-                            (index === order.items.length-1 ? "last" : "")}>
+                            (index === order.items.length-1 ? "last" : "")}
+                            key={item.id}>
                                 <Col xs="2" className="img">
                                     <img src={item.imghref} 
                                     alt={item.title} 
@@ -141,6 +146,16 @@ function OrderItem({order, index})
                             </Row>
                         );
                     })}
+
+                    {
+                        order.orderStatus !== "Cancelled" &&
+                        <div className="cancelButton">
+                            <Button variant="danger" onClick={() => onCancel()}>
+                                Cancel order
+                            </Button>
+                        </div>
+                    }
+
             </Accordion.Body>
         </Accordion.Item>
     );

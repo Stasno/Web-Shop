@@ -114,7 +114,7 @@ class Catalog extends React.Component
             this.FetchProducts();
         };
 
-        if (this.props.location.search == "")
+        if (this.props.location.search === "")
         {
             update();
             return;

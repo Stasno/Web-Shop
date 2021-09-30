@@ -45,11 +45,25 @@ class Cart extends React.Component
                         let i = this.state
                             .RequestResult
                             .items
-                            .findIndex(i => i.id == request);
+                            .findIndex(i => i.id === request);
+
+                        if (res.inStock === false)
+                        {
+                            if (this.state.RequestResult.items[i].inStock !== res.inStock)
+                                this.setState({IsButtonAvailable: this.state.IsButtonAvailable + 1});
+                        }
+                        else
+                        {
+                            if (this.state.RequestResult.items[i].inStock !== res.inStock && this.state.IsButtonAvailable - 1 >= 0)
+                                this.setState({IsButtonAvailable: this.state.IsButtonAvailable - 1});
+                        }
 
                         this.state.RequestResult.items[i].inStock = res.inStock;
                         
                         this.setState({RequestResult: this.state.RequestResult});
+
+                        
+                            
 
                         return Promise.resolve();
                     }
@@ -68,7 +82,19 @@ class Cart extends React.Component
 
     FetchCartItems()
     {
-        ApiFetchGet(this.setState.bind(this), "Cart");
+        //ApiFetchGet(this.setState.bind(this), "Cart");
+        ApiFetchGet((state) => 
+        {
+            this.setState(state);
+            let count = 0;
+            state.RequestResult.items.forEach(i =>
+                {
+                    if (i.inStock === false)
+                        count++;
+                });
+
+            this.setState({IsButtonAvailable: count});
+        }, "Cart");
     }
 
     constructor(props)
@@ -78,6 +104,7 @@ class Cart extends React.Component
         AuthService.SecuredResource();
 
         this.state={
+            IsButtonAvailable: 0,// 0 - true, variable > 0 - false
             isLoaded: false,
             RequestResult: 
             {
@@ -105,8 +132,17 @@ class Cart extends React.Component
         const { RequestResult } = this.state;
 
         this.CartRequest("DELETE", RequestResult.items[index].id);
+
+        if (RequestResult.items[index].inStock === false)
+        {
+            this.setState({IsButtonAvailable: this.state.IsButtonAvailable - 1});
+        }
+
         RequestResult.items.splice(index, 1);
-        this.setState({ RequestResult });
+        
+        this.setState({ 
+            RequestResult 
+        });
     }
 
     EmptyCart()
@@ -116,7 +152,10 @@ class Cart extends React.Component
         const { RequestResult } = this.state;
 
         RequestResult.items.splice(0, RequestResult.items.length);
-        this.setState({ RequestResult });
+        this.setState({ 
+            RequestResult,  
+            IsButtonAvailable: 0
+        });
     }
 
     DecItemQuantity(index)
@@ -155,7 +194,11 @@ class Cart extends React.Component
     render()
     {
 
-        const {isLoaded, error, RequestResult} = this.state;
+        const {isLoaded, RequestResult, IsButtonAvailable} = this.state;
+
+        console.log("render ", IsButtonAvailable);
+
+        
 
         return(
             <Container className="cart">
@@ -217,7 +260,9 @@ class Cart extends React.Component
                                     <Col xs="10" sm="12" lg="10" xl="8">
 
                                         <Link to="/createOrder" className="createOrder">
-                                            <Button variant="success" >
+                                            <Button 
+                                            variant="success" 
+                                            disabled={IsButtonAvailable > 0 ? "false" : ""}>
                                                 Create Order
                                             </Button>
                                         </Link>

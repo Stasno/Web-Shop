@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
-import AuthService, { ErrorNotification } from '../Services/AuthService';
+import AuthService from '../Services/AuthService';
 import { API_URL } from '../Services/ApiService';
 import '../styles/Login.scss';
 
